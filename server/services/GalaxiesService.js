@@ -27,4 +27,4 @@ class GalaxiesService {
     return await dbContext.Galaxies.findByIdAndDelete()
   }
 }
-export const galaxiesService = new GalaxiesService(id)
+export const galaxiesService = new GalaxiesService()

@@ -1,5 +1,6 @@
 import { query } from 'express'
 import { galaxiesService } from '../services/GalaxiesService'
+import BaseController from '../utils/BaseController'
 
 export class GalaxiesController extends BaseController {
   constructor() {
@@ -16,7 +17,7 @@ export class GalaxiesController extends BaseController {
 
   async getAll(req, res, next) {
     try {
-      const galaxies = await galaxiesService.getAll(req, query)
+      const galaxies = await galaxiesService.getAll(req.query)
       res.send(galaxies)
     } catch (error) {
       next(error)
